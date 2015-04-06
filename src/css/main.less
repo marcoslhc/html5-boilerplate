@@ -1,44 +1,80 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic|Vollkorn:400italic,700italic,400,700);
+@light-blue: rgb(179, 212, 252);
+
+@black:         rgb(1,1,1);
+@text-black:    rgb(34,34,34);
+@warm-black:    rgb(40, 34, 44);
+@cold-black:    rgb(40, 44, 44);
+
+@warm-white:    rgb(250, 245, 240);
+@cold-white:    rgb(245, 245, 255);
+
+@darkest-grey:  lighten(@black, 3%);
+@darker-grey:   lighten(@black, 5%);
+@dark-grey:     lighten(@black, 8%);
+@grey:          lighten(@black, 13%);
+@light-grey:    lighten(@black, 21%);
+@lighter-grey:  lighten(@black, 34%);
+@lightest-grey: lighten(@black, 55%);
+
+@silver:        lighten(@text-black, 68%);
+
+@minium: hsl(0, 93%, 41%);
+
+@sans-serif: 'Lato', sans-serif;
+@serif: 'Volkorn', serif;
+@base-size: 16px;
+@base-line: 1.4;
+
+@size-xs-max: 767px;
+@size-s-min: 768px;
+@size-s-max: 991px;
+@size-m-min: 992px;
+@size-m-max: 1199px;
+@size-l-min: 1200px;
+
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
 *,
 *:before,
 *:after {
-  box-sizing: content-box;
+    box-sizing: content-box;
 }
+
 html {
-  font-family: 'Volkorn', serif;
-  color: #222222;
-  font-size: 16px;
-  line-height: 1.4;
-  background-color: #faf5f0;
-  margin: 15px;
+    font-family: @serif;
+    color: @text-black;
+    font-size: @base-size;
+    line-height: @base-line;
+    background-color: @warm-white;
+    margin: 15px;
 }
+
 body {
-  margin: -15px;
+    margin: -15px;
 }
 body > * {
-  margin: auto 1rem;
+    margin: auto 1rem;
 }
+
 p {
-  letter-spacing: 1px;
+    letter-spacing: 1px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #ca0707;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: -1px;
+
+h1, h2, h3, h4, h5, h6 {
+    color: @minium;
+    font-family: @sans-serif;
+    letter-spacing: -1px;
 }
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -46,103 +82,141 @@ h6 {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
+
 ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: @light-blue;
+    text-shadow: none;
 }
+
 /*
  * A better looking default horizontal rule
  */
+
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #cfcfcf;
-  margin: 1em 0;
-  padding: 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid @silver;
+    margin: 1em 0;
+    padding: 0;
 }
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
+
 audio,
 canvas,
 iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
+    vertical-align: middle;
 }
+
 /*
  * Remove default fieldset styles.
  */
+
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
+
 /*
  * Allow only vertical resizing of textareas.
  */
+
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
+
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #cfcfcf;
-  color: #222222;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: @silver;
+    color: @text-black;
+    padding: 0.2em 0;
 }
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 /*
  * Hide visually and from screen readers:
  */
+
 .hidden {
-  display: none !important;
+    display: none !important;
 }
+
 /*
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
+
 .visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
+
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
+
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
 }
+
 /*
  * Hide visually and from screen readers, but maintain layout
  */
+
 .invisible {
-  visibility: hidden;
+    visibility: hidden;
 }
+
 /*
  * Clearfix: contain floats
  *
@@ -154,97 +228,117 @@ textarea {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
+
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (max-width: 767px) {
-  /* Style adjustments for viewports that meet the condition */
+
+@media only screen and (max-width: @size-xs-max) {
+    /* Style adjustments for viewports that meet the condition */
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* Style adjustments for viewports that meet the condition */
+
+@media only screen and (min-width: @size-s-min) and (max-width: @size-s-max) {
+    /* Style adjustments for viewports that meet the condition */
 }
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  /* Style adjustments for viewports that meet the condition */
+
+@media only screen and (min-width: @size-m-min) and (max-width: @size-m-max) {
+    /* Style adjustments for viewports that meet the condition */
 }
-@media only screen and (max-width: 1200px) {
-  /* Style adjustments for viewports that meet the condition */
+
+@media only screen and (max-width: @size-l-min) {
+    /* Style adjustments for viewports that meet the condition */
 }
-@media print, (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+
+@media print,
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
 }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
+
 @media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #010101 !important;
-    /* Black prints faster:
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: @black !important; /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  /*
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-  pre,
-  blockquote {
-    border: 1px solid #8d8d8d;
-    page-break-inside: avoid;
-  }
-  /*
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid @lightest-grey;
+        page-break-inside: avoid;
+    }
+
+    /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
